@@ -1,12 +1,12 @@
-/*
-TWO NUMBER SUM
-+ inputs
+/* TWO NUMBER SUM
+Inputs:
   array: Array of unsorted integers, with length
   targetSum: integer
 
-Find two elements in the array that add up to equal the targetSum
-Return them in a sorted array
-If none found, return an empty array
+Problem:
+  Find two elements in the array that add up to equal the targetSum
+  Return them in a sorted array
+  If none found, return an empty array
 
 */
 
