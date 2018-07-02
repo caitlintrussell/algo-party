@@ -9,16 +9,31 @@ Problem:
   If none found, return an empty array
 
 */
-
-const twoNumberSum = (array, targetSum) => {
-	for (let i=0; i<array.length; i++) {
-		let elem1 = array[i]
-		for (let k=0; k<array.length; k++) {
-			let elem2 = array[k]
+// NESTED LOOP Naive, O(n^2) time
+const twoNumberSum = (arr, targetSum) => {
+	for (let i=0; i<arr.length; i++) {
+		let elem1 = arr[i]
+		for (let k=0; k<arr.length; k++) {
+			let elem2 = arr[k]
 			if (i !== k && elem1 + elem2 === targetSum) {
 				return elem1 < elem2 ? [elem1, elem2] : [elem2, elem1]
 			}
 		}
+	}
+	return [];
+}
+
+const twoNumberSumWhileLoop = (arr, targetSum) =>  {
+	arr.sort((a, b) => a - b);
+	let left = 0;
+	let right = arr.length - 1;
+	while (left < right) {
+		let currentSum = arr[left] + arr[right];
+		if (currentSum === targetSum) {
+			return [arr[left], arr[right]];
+		}
+		else if (currentSum > targetSum) right--;
+		else if (currentSum < targetSum) left++;
 	}
 	return [];
 }
